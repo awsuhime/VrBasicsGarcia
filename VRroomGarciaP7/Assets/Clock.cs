@@ -15,11 +15,13 @@ public class Clock : MonoBehaviour
 
     void Update()
     {
+        
         float hourTime = DateTime.Now.Hour;
-        hour.transform.rotation = Quaternion.Euler(-hourTime + 90f, 0f, 0f);
         float minuteTime = DateTime.Now.Minute;
-        minute.transform.rotation = Quaternion.Euler(-hourTime + 90f, 0f, 0f);
         float secondTime = DateTime.Now.Second;
-        second.transform.rotation = Quaternion.Euler(-secondTime + 90f, 0f, 0f);
+        hour.transform.rotation = Quaternion.Euler(-hourTime * 6 - 90f, 0, 0);        
+        minute.transform.rotation = Quaternion.Euler(-minuteTime * 6 - 90f, 0, 0);       
+        second.transform.rotation = Quaternion.Euler(-secondTime * 6 - 90f, 0, 0);
+        
     }
 }
